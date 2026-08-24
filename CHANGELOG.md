@@ -1,3 +1,7 @@
+### Unreleased (Amuse fork)
+
+* Add `MapboxMap.location.setExternalLocation`/`.clearExternalLocation`, letting apps drive the location puck from a location source other than the platform's default GPS-based provider (e.g. an indoor-positioning SDK). Resolves [#1085](https://github.com/mapbox/mapbox-maps-flutter/issues/1085).
+
 ### 2.31.0
 
 * Introduce experimental `RasterLayer.rasterColorScale` property, resulting in more precise visualization with long-tailed raster-array data source.

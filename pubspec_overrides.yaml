@@ -1,0 +1,5 @@
+# See DEVELOPING.md — resets Dart pub workspace resolution so this package
+# can be worked on standalone (outside the upstream monorepo workspace it
+# ships expecting). Needed for local development of the Amuse fork; not
+# something amuse_map's consumers need to know about.
+resolution:

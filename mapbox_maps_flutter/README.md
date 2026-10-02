@@ -85,6 +85,20 @@ class MapScreen extends StatelessWidget {
 
 For the full API surface — camera, gestures, styles, sources and layers, annotations, viewport, location component — see the platform package READMEs linked above.
 
+### External location provider (Amuse fork)
+
+To drive the puck from a location source other than the platform's default (GPS-based) provider — for example, an indoor-positioning SDK — call `MapboxMap.location.setExternalLocation`. This registers a native location-provider override on first call; until then, the map behaves exactly as it does with the default provider. Android and iOS only; on web `setExternalLocation` throws `UnsupportedError`.
+
+```dart
+mapboxMap.location.setExternalLocation(
+    latitude: 37.775,
+    longitude: -122.418,
+    heading: 90.0,
+    accuracy: 5.0);
+```
+
+Call `MapboxMap.location.clearExternalLocation()` to restore the default provider (e.g. falling back to GPS when leaving indoor coverage).
+
 ## Migrating from v2
 
 If you are upgrading from mapbox_maps_flutter v2.x, see the [v3 migration guide](./MIGRATION.md).

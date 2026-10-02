@@ -1,5 +1,7 @@
 ### main
 
+* Fix `StyleManager.addLayer` and `addPersistentLayer` ignoring their `position` argument (it was never forwarded to the platform).
+
 ### 3.0.0
 
 * [Web] Add style terrain support: `setStyleTerrain`, `getStyleTerrainProperty`, and `setStyleTerrainProperty`.

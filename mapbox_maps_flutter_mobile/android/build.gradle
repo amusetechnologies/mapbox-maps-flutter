@@ -38,9 +38,12 @@ apply plugin: 'com.android.library'
 
 // Kotlin is built into AGP 9+. For older AGP (Flutter < 3.44) the
 // 'kotlin-android' plugin must still be applied explicitly.
+// pluginManager.apply rather than `apply plugin:` because Flutter's
+// Built-in Kotlin check scans build scripts for `apply plugin: 'kotlin-android'`
+// as text and flags it even inside this AGP < 9 branch.
 def agpMajor = com.android.Version.ANDROID_GRADLE_PLUGIN_VERSION.tokenize('.')[0] as int
 if (agpMajor < 9) {
-    apply plugin: 'kotlin-android'
+    pluginManager.apply('kotlin-android')
 }
 
 android {
